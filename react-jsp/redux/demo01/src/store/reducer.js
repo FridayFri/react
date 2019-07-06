@@ -7,12 +7,21 @@ const defaultState = {
   ]
 }
 export default (state = defaultState, action) => {
-  console.log(state,action)
-  if(action.type === 'changeInput'){
+  if (action.type === 'changeInput') {
     let newState = JSON.parse(JSON.stringify(state))
-    newState.inputValue=action.value
+    newState.inputValue = action.value
     return newState
-
+  }
+  if (action.type === 'addInput') {
+    let newState = JSON.parse(JSON.stringify(state))
+    newState.list.push(newState.inputValue)
+    newState.inputValue = ''
+    return newState
+  }
+  if (action.type === 'delete') {
+    let newState = JSON.parse(JSON.stringify(state))
+    newState.list.splice(action.index,1)
+    return newState
   }
   return state
 }

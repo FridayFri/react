@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
-import './header.styl'
+import './header.styl';
 class Header extends Component {
-  state = {}
+  state = {  }
   handleback = () => {
-    //   if(this.props.history){
-    //     this.props.history.pop();
-    //   }<Route path="*" component>
-    window.history.back()
+    // if (this.props.history) {
+    //   this.props.history.pop();
+    // }
+    // <Route path="*" component >
+    window.history.back();
   }
   render() {
     return (
@@ -15,11 +16,11 @@ class Header extends Component {
           <i className="icon-back"></i>
         </span>
         <div className="header-title">
-          {this.props.title}
+          { this.props.title }
         </div>
       </div>
     );
   }
 }
-
+ 
 export default Header;

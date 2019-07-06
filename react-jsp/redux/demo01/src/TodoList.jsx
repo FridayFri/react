@@ -20,14 +20,25 @@ class TodoList extends Component {
           onChange={this.changeInputValue}
           value = {this.state.inputValue}
            />
-          <Button type="Primary">增加</Button>
+          <Button type="Primary"
+          onClick={this.clickBtn}
+          >增加</Button>
         </div>
         <div style ={{margin:'10px',width:'300px'}}>
           <List dataSource={this.state.list}
-          renderItem={item=>(<List.Item>{item}</List.Item>)} />
+          renderItem={(item,index)=>(<List.Item
+          onClick={this.delete.bind(this,index)}
+          >{item}</List.Item>)} />
         </div>
       </div>
      );
+  }
+  delete(index) {
+    const action = {
+      type:'delete',
+      index
+    }
+    store.dispatch(action)
   }
   changeInputValue(e) {
     const action = {
@@ -39,6 +50,13 @@ class TodoList extends Component {
   }
   storeChange() {
     this.setState(store.getState())
+  }
+  clickBtn(e) {
+    const action = {
+      type:'addInput',
+      value:e.target.value,
+    }
+    store.dispatch(action)
   }
 }
  

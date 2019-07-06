@@ -110,7 +110,7 @@ class Recommend extends Component {
         <Scroll refresh={refreshScroll}
         onScroll={forceCheck}
         >
-          <div> 
+          <div>
             <div className="slider-container">
               {/* slider -> swiper */}
               <div className="swiper-wrapper">

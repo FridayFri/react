@@ -1,4 +1,4 @@
-class Song {
+export class Song {
   constructor(id, mId, name, img,
     duration, url, singer) {
       this.id = id;
@@ -10,7 +10,7 @@ class Song {
       this.singer = singer;
   }
 }
-
+// albumdesc: ""
 export function createSong(data) {
   return new Song(
     data.songid,

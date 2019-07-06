@@ -12,7 +12,7 @@ class Loading extends Component {
       >
         <div className="loading-wrapper">
           <img src={loadingImg} width="18px" 
-          height="18px" 
+          height="18px"
            alt=""/>
           <div className="loading-title">
             { title }

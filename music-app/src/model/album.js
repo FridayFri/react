@@ -10,6 +10,17 @@ class Album {
   }
 }
 export function createAlbumByItem(item) {
+  // album_id: 7089819
+// album_mid: "002gD15j363IEc"
+// album_name: "祝你生日快乐"
+// public_time: "2019-07-02"
+// singers: Array(1)
+// 0:
+// singer_id: 159
+// singer_mid: "0022VU5J1D8BRP"
+// singer_name: "胡彦斌"
+// week: 26
+// year: 2019
   return new Album(
     item.album_id,
     item.album_mid,
@@ -19,14 +30,13 @@ export function createAlbumByItem(item) {
     item.public_time
   )
 }
-
-export  function createAlbumBydetail(detail) {
+export function createAlbumBydetail(detail) {
   return new Album(
     detail.id,
     detail.mid,
     detail.name,
     `http://y.gtimg.cn/music/photo_new/T002R300x300M000${detail.mid}.jpg?max_age=2592000`,
-    detail.singer_name,
+    detail.singername,
     detail.aDate
   )
 }

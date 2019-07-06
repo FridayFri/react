@@ -2,16 +2,27 @@ import React, { Component } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import Scroll from '../../common/scroll/Scroll';
 import { getAlbuminfo } from '../../api/recommend';
+import { getSongVKey } from '../../api/song'
 import * as AlbumModel from '../../model/album';
 import * as SongModel from '../../model/song';
-import Header from '../../common/header/Header'
+import Header from '../../common/header/Header';
 import './album.styl';
 class Album extends Component {
   state = {
     show: false,
     songs: [],
     album: {},
-    loading: true
+    loading: true,
+    refresh: false
+  }
+  getSongUrl = (song, mId) =>{
+    // 请求 
+    getSongVKey(mId).then(res =>{
+      if(res.data.items) {
+        let item = res.data.items[0];
+        song.url = `http://dl.stream.qqmusic.qq.com/${item.filename}?vkey=${item.vkey}&guid=3655047200&fromtag=66`
+      }
+    })
   }
   componentDidMount() {
     const id = this.props.match.params.id;
@@ -23,12 +34,14 @@ class Album extends Component {
       let songs = [];
       songList.forEach(item => {
         let song = SongModel.createSong(item);
+        this.getSongUrl(song, item.songmid)
         songs.push(song);
       })
       this.setState({
         loading: false,
-        album: album,
-        songs
+        album: album, 
+        songs,
+        refresh: true
       })
     })
     this.setState({
@@ -37,15 +50,15 @@ class Album extends Component {
   }
   selectSong = (song) => {
     return () => {
-      this.props.changeCurrentSong(song)
+      this.props.changeCurrentSong(song);
     }
   }
   render() {
-    const { album } = this.state;
+    const { album, refresh } = this.state;
     const songsNode = this.state.songs.map((song) => {
       return (
         <div className="song" key={song.id}
-          onClick={this.selectSong(song)}
+        onClick={this.selectSong(song)}
         >
           <div className="song-name">
             {song.name}
@@ -79,10 +92,10 @@ class Album extends Component {
           </div>
           <div className="album-container">
             <div className="album-scroll">
-              <Scroll onScroll={() => { }}>
+              <Scroll onScroll={() => { }} refresh={refresh}>
                 <div className="album-wrapper">
                   <div className="song-count">
-                    专辑 共 { songsNode.length } 首
+                    专辑 共 {songsNode.length} 首
                   </div>
                   <div className="song-list">
                     {songsNode}

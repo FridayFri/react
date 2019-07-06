@@ -6,7 +6,7 @@ import {
 import Recommend from './recommend/Recommend';
 import Ranking from './ranking/Ranking';
 import Search from './search/Search';
-import Player from '../containers/Player'
+import Player from '../containers/Player';
 import '../assets/stylus/reset.styl';
 import '../assets/stylus/font.styl';
 import './App.styl';
@@ -23,7 +23,7 @@ function App() {
             <NavLink className="nav-link" to="/recommend">
               <span>推荐</span>
             </NavLink>
-          </div> 
+          </div>
           <div className="tab-item">
             <NavLink className="nav-link" to="/ranking">
               <span>排行榜</span>

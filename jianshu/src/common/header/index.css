@@ -50,6 +50,18 @@ a{
   font-size: 14px;
   color: #666;
 }
+.slide-enter {
+  transition: all .2s ease-out;
+}
+.slide-enter-active {
+  width: 240px;
+}
+/* .slide-exit {
+  transition: all .2s ease-out;
+}
+.slide-exit-active{
+  width: 160px;
+} */
 .addition{
   position: absolute;
   right: 0;
@@ -62,6 +74,11 @@ a{
 }
 .focused{
   width: 239px;
+
+}
+.focused i {
+  background: #777;
+  color: #fff;
 }
 .search .iconfont {
   position: absolute;

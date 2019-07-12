@@ -13,7 +13,7 @@ function combineReducers(reducers) {
   return function (state = {}, action) {
     for (let j = 0, len = finalReducersKeys.length; j < len; j++) {
       const key = finalReducersKeys[j]
-      const reducer = finalReducersKeys[key]
+      const reducer = finalReducers[key]
       const previousStateForKey = state[key]
       const nextStateForKey = reducer(previousStateForKey, action)
       nextState[key] = nextStateForKey

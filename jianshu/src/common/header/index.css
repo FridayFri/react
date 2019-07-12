@@ -1,0 +1,91 @@
+.logo{
+  position: relative;
+  height: 56px;
+  border-bottom: 1px solid #f0f0f0;
+}
+a{
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100px;
+  height: 56px;
+  background: url(https://cdn2.jianshu.io/assets/web/nav-logo-4c7bbafe27adc892f3046e6978459bac.png);
+  background-size: contain;
+}
+.nav{
+  width: 960px;
+  height: 100%;
+  margin: 0 auto;
+  padding-right: 70px;
+  box-sizing: border-box;
+}
+.nav-item{
+  line-height: 56px;
+  padding:0 15px;
+  font-size: 17px;
+  color: #333;
+}
+.active{
+  color: #ea6f5a
+}
+.left{
+  float: left;
+}
+.right{
+  float: right;
+  right: #969696;
+}
+.search input{
+  width: 160px;
+  box-sizing: border-box;
+  background-color: #eee;
+  height: 38px;
+  margin-top: 9px;
+  margin-left: 20px;
+  border: none;
+  outline: none;
+  border-radius: 19px;
+  padding: 0 30px 0 30px;
+  font-size: 14px;
+  color: #666;
+}
+.addition{
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 56px;
+}
+.search {
+  float: left;
+  position: relative;
+}
+.focused{
+  width: 239px;
+}
+.search .iconfont {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  width: 30px;
+  line-height: 30px;
+  border-radius: 15px;
+  text-align: center;
+}
+.button{
+  line-height: 38px;
+  float: right;
+  margin-top: 9px;
+  border-radius: 19px;
+  border: 1px solid #ec6149;
+  margin-right: 20px;
+  padding:0 20px ;
+  font-size: 14px;
+}
+.red{
+  color: #ec6149;
+}
+.writte {
+  color: #fff;
+  background: #ec6149;
+}

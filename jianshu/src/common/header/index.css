@@ -80,7 +80,7 @@ a{
   background: #777;
   color: #fff;
 }
-.search .iconfont {
+.search .icon{
   position: absolute;
   right: 5px;
   bottom: 5px;
@@ -88,6 +88,41 @@ a{
   line-height: 30px;
   border-radius: 15px;
   text-align: center;
+}
+.spin {
+  font-size: 12px;
+  margin-right: 5px;
+}
+.searchInfo{
+  position: absolute;
+  left: 0;
+  top: 56px;
+  width: 240px;
+  padding: 0 20px;
+  box-shadow: 0 0 8px rgba(0,0,0,.2);
+  border-radius: 10px;
+}
+.search-title{
+  margin-top: 20px;
+  margin-bottom: 15px;
+  line-height: 20px;
+  font-size: 14px;
+  color: #969696;
+}
+.serach-switch {
+  font-size: 13px;
+  float: right;
+}
+.serach-item li {
+  line-height: 20px;
+  padding: 0 5px;
+  font-size: 12px;
+  border: 1px solid #ddd;
+  color: #787878;
+  display: inline-block;
+  margin-right: 15px;
+  margin-bottom: 6px;
+  border-radius: 3px;
 }
 .button{
   line-height: 38px;

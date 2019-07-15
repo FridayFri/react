@@ -63,6 +63,7 @@
   height: 100px;
   float: right;
   border-radius: 10px;
+  object-fit: cover;
 }
 .listInfo {
   float: left;

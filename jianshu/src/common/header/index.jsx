@@ -3,6 +3,7 @@ import './index.css'
 import { CSSTransition } from 'react-transition-group'
 import { connect } from 'react-redux'
 import { actionCreators } from './store'
+import { Link } from 'react-router-dom'
 
 class Header extends Component {
   constructor(props) {
@@ -49,7 +50,7 @@ class Header extends Component {
     }
     return (
       <div className="logo">
-        <a href="/"></a>
+        <Link className="logo-a"  to="/"></Link>
         <div className="nav">
           <div className="nav-item left active">首页</div>
           <div className="nav-item left">下载App</div>

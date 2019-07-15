@@ -10,9 +10,8 @@ function App() {
   return (
     <Provider store={store}>
       <div>
-        <Header>
-        </Header>
         <Router>
+        <Header/>
           <div>
             <Route path='/' exact component={Home}></Route>
             <Route path='/detail' exact component={Detail}></Route>

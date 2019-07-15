@@ -4,18 +4,24 @@ import * as constants from './constants'
 const defaultState = fromJS({
   topicList: [],
   articleList: [],
-  recommendList:[]
+  recommendList: [],
+  showScroll: false
 })
 
 export default (state = defaultState, action) => {
-  console.log(action)
   switch (action.type) {
     case constants.CHANGE_HOME_DATA:
       return state.merge({
-        topicList:fromJS(action.topicList),
-        articleList:fromJS(action.articleList),
-        recommendList:fromJS(action.recommendList),
+        topicList: fromJS(action.topicList),
+        articleList: fromJS(action.articleList),
+        recommendList: fromJS(action.recommendList),
       })
+    case constants.ADD_ARTICLE_LIST:
+      return state.set('articleList', state.get('articleList').concat(action.List))
+
+    case constants.TOGGLE_SCROLL_TOP:
+      return state.set('showScroll',action.state)
+
     default:
       return state
   }

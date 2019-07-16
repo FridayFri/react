@@ -15,6 +15,16 @@ class Recommend extends Component {
             )
           })
         }
+        <div className="download">
+          <div className="twoCode">
+            <img src="//cdn2.jianshu.io/assets/web/download-index-side-qrcode-cb13fc9106a478795f8d10f9f632fccf.png" alt=""/>
+          </div>
+          <img src="//cdn2.jianshu.io/assets/web/download-index-side-qrcode-cb13fc9106a478795f8d10f9f632fccf.png" alt=""/>
+          <div className="info">
+            < div className="title">下载简书手机App ></div>
+            <div className="description">随时随地发现和创作内容</div>
+         </div>
+        </div>
       </div>
      );
   }
@@ -23,7 +33,8 @@ class Recommend extends Component {
 	width: 280px;
 	height: 50px;
 	background: url(${(props) => props.imgUrl});
-	background-size: contain;
+  background-size: contain;
+  margin-top:10px;
 `;
  
 

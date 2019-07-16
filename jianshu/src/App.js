@@ -5,6 +5,7 @@ import { Provider } from 'react-redux'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Home from '../src/pages/home'
 import Detail from '../src/pages/detail'
+import Login from '../src/pages/login'
 
 function App() {
   return (
@@ -14,7 +15,8 @@ function App() {
         <Header/>
           <div>
             <Route path='/' exact component={Home}></Route>
-            <Route path='/detail' exact component={Detail}></Route>
+            <Route path='/detail/:id' exact component={Detail}></Route>
+            <Route path='/login' exact component={Login}></Route>
           </div>
         </Router>
       </div>

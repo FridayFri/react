@@ -92,7 +92,50 @@
   background: url();
   background-size: contain;
 }
-
+.download{
+  margin-bottom: 30px;
+  width: 100%;
+  border: 1px solid #f0f0f0;
+  border-radius: 6px;
+  background-color: #fff;
+  height: 66px;
+  margin-top: 10px;
+  position: relative;
+  box-sizing: border-box;
+}
+.download img {
+  float: left;
+  display: block;
+  width: 50px;
+  height: 50px;
+  margin: 8px 0 0 15px;
+}
+.twoCode img {
+  display: none;
+}
+.download:hover img {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  bottom: 80px;
+  left: 20px;
+  border-radius: 10px;
+}
+.info{
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 17px;
+  margin-top: 15px;
+}
+.title {
+  font-size: 14px;
+  color: #333;
+}
+.description{
+  font-size: 12px;
+  margin-top: 8px;
+  color: #999;
+}
 
 /* writer */
 .writer{

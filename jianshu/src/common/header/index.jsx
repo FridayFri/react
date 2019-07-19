@@ -4,13 +4,11 @@ import { CSSTransition } from 'react-transition-group'
 import { connect } from 'react-redux'
 import { actionCreators } from './store'
 import { Link } from 'react-router-dom'
+import { actionCreators as loginActionCreators } from '../../pages/login/store'
 
 class Header extends Component {
-  constructor(props) {
-    super(props)
-  }
   render() {
-    const { focused, list, page } = this.props
+    const { focused, list, page, login } = this.props
     const List = list.toJS()
     const pageList = []
     if (List.length) {
@@ -50,11 +48,14 @@ class Header extends Component {
     }
     return (
       <div className="logo">
-        <Link className="logo-a"  to="/"></Link>
+        <Link className="logo-a" to="/"></Link>
         <div className="nav">
           <div className="nav-item left active">首页</div>
           <div className="nav-item left">下载App</div>
-          <div className="nav-item right">登录</div>
+          {login ?
+            <div className="nav-item right" onClick={this.props.logout}>退出</div> :
+            <Link to="/login"><div className="nav-item right">登录</div></Link>
+          }
           <div className="nav-item right">
             <i className="iconfont">&#xe636;</i>
           </div>
@@ -76,9 +77,11 @@ class Header extends Component {
           </CSSTransition>
           <div className="addition">
             <div className="button red">注册</div>
+            <Link to="/write">
             <div className="button writte">
               <i className="iconfont">&#xe615;</i>
               写文章</div>
+            </Link>
           </div>
         </div>
       </div>
@@ -90,7 +93,8 @@ const mapStateToProps = (state) => {
     focused: state.get('header').get('focused'),
     list: state.getIn(['header', 'list']),
     page: state.getIn(['header', 'page']),
-    mouseIn: state.getIn(['header', 'mouseIn'])
+    mouseIn: state.getIn(['header', 'mouseIn']),
+    login: state.getIn(['login', 'login'])
   }
 }
 const mapDispatchToProps = (dispatch) => {
@@ -109,12 +113,14 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(actionCreators.mouseLeave())
     },
     handleChangePage(page, totalPage) {
-      if (page < 5) 
-      {  
-         dispatch(actionCreators.changePage(page+1))
-      }else {
+      if (page < 5) {
+        dispatch(actionCreators.changePage(page + 1))
+      } else {
         dispatch(actionCreators.changePage(1))
       }
+    },
+    logout() {
+      dispatch(loginActionCreators.logout())
     }
   }
 }

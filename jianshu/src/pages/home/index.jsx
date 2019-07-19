@@ -15,7 +15,7 @@ class Home extends Component {
     return (
       <div className="homeWrapper">
         <div className="homeLeft">
-          <img className="img" src="https://upload-images.jianshu.io/upload_images/4458735-5a168eb01a15d818.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp" alt="" />
+          <img className="img" src="https://user-gold-cdn.xitu.io/2019/7/16/16bf8c89c41f87c1?imageView2/1/w/1304/h/734/q/85/format/webp/interlace/1" alt="" />
           <Topic />
           <List />
         </div>

@@ -1,6 +1,6 @@
 import * as constants from './constants'
 import axios from 'axios';
-import { List, fromJS } from 'immutable';
+import {  fromJS } from 'immutable';
 
 const changeHomeData = (result) => ({
   type: constants.CHANGE_HOME_DATA,

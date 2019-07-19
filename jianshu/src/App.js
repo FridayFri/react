@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Home from '../src/pages/home'
 import Detail from '../src/pages/detail'
 import Login from '../src/pages/login'
+import Write from '../src/pages/write'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
             <Route path='/' exact component={Home}></Route>
             <Route path='/detail/:id' exact component={Detail}></Route>
             <Route path='/login' exact component={Login}></Route>
+            <Route path='/write' exact component={Write}></Route>
           </div>
         </Router>
       </div>

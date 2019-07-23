@@ -1,12 +1,14 @@
 import React from 'react';
 import logo from './logo.svg';
-import ContextDemo from './ContextDemo.js'
+import ContextDemo from './ContextDemo.jsx'
 import './App.css';
+import Count from './Count'
 
 function App() {
   return (
     <div className="App">
-      <ContextDemo />
+      <ContextDemo/>
+      <Count />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>

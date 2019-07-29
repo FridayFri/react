@@ -17,7 +17,7 @@ export default (mapStateToProps, mapDispatchToProps) => (WrappedComponent) => {
                 Object.assign(filterProps, mapStateToProps(state))
               }
               return (
-                <WrappedComponent {...filterProps}/>
+                <WrappedComponent {...filterProps} />
               )
             }
           }
